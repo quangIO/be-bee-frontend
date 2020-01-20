@@ -55,7 +55,7 @@ function getLastHour() {
   return new Date().getTime() - 1000 * 60 * 60;
 }
 
-const socket = new WebSocket('ws://' + API);
+const socket = new WebSocket(((window.location.port === '8080') ? 'ws:' : 'wss:') + API);
 
 export default {
   name: 'home',
